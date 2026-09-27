@@ -14,7 +14,9 @@ def make_task(task_id: str, group_id: str | None = None) -> CobolTask:
         task_id=task_id,
         group_id=group_id or task_id,
         title=f"Sum task {task_id}",
-        specification="Read signed integers and display their total.",
+        specification=(
+            f"Read signed integers for task {task_id} and display their total."
+        ),
         program="PROGRAM SOURCE",
         reference_program="REFERENCE SOURCE",
         reference_tests=(CobolCase("basic", "1\n2\n", "SUM=3"),),
